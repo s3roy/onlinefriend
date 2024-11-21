@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support - Onlinefriend</title>
+    <style>
+      /* Basic Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body Styles */
+      body {
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Container Styles */
+      .container {
+        width: 400px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Heading Styles */
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Label Styles */
+      label {
+        font-size: 16px;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      /* Input and Textarea Styles */
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+      }
+
+      textarea {
+        height: 150px;
+        resize: none;
+      }
+
+      /* Button Styles */
+      button {
+        width: 100%;
+        background-color: #28a745;
+        color: white;
+        padding: 12px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+      }
+
+      button:hover {
+        background-color: #218838;
+      }
+
+      /* Thank You Message Styles */
+      .thank-you-message {
+        display: none;
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      /* Support Email Styles */
+      .support-email {
+        text-align: center;
+        font-size: 14px;
+        color: #333;
+        margin-top: 10px;
+      }
+
+      .support-email a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .support-email a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Contact Support</h1>
+
+      <form id="supportForm">
+        <label for="email">Your Email Address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email address"
+          required
+        />
+
+        <label for="query">Your Message / Query</label>
+        <textarea
+          id="query"
+          placeholder="Enter your query or message"
+          required
+        ></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="thank-you-message" id="thankYouMessage">
+        <p>Thank you! We will contact you within 12 to 24 hours.</p>
+      </div>
+
+      <div class="support-email">
+        <p>
+          If you need immediate assistance, please email us at
+          <a href="mailto:anil@onlinefriend.app">anil@onlinefriend.app</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("supportForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Show thank you message
+          document.getElementById("thankYouMessage").style.display = "block";
+
+          // Clear form fields
+          document.getElementById("email").value = "";
+          document.getElementById("query").value = "";
+
+          // Hide the form
+          event.target.style.display = "none";
+        });
+    </script>
+  </body>
+</html>
